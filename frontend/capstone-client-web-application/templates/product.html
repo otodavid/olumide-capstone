@@ -1,0 +1,31 @@
+<div class="product-container">
+  {{#products}}
+  <div class="product">
+    <div class="photo">
+      <img
+        src="./images/products/{{imageUrl}}"
+        alt=""
+        onclick="showImageDetailForm(`{{name}}`,'./images/products/{{imageUrl}}')"
+      />
+    </div>
+    <div class="product-content">
+      <div class="product-header">
+        <h4>{{name}}</h4>
+        <h5 class="price">${{price}}</h4>
+      </div>
+      <div>
+        <p>{{description}}</p>
+      </div>
+
+      <div class="add-button">
+        <button
+          class="btn btn-success"
+          onclick="cartService.addToCart({{productId}})"
+        >
+          Add to Cart
+        </button>
+      </div>
+    </div>
+  </div>
+  {{/products}}
+</div>
